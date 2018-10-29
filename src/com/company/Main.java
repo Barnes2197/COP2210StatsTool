@@ -1,3 +1,18 @@
+/*
+Team leader: Maurice Barnes, 5443793, U08
+Student: <name>, <PID>, <class section>
+Programming Project 5 - Write a program that simulates a statistics tool, by letting the user determine the minimum, the maximum, the range (maximum – minimum), the mode (value that is repeated more often), the mean (average), and the standard deviation of a set of numbers. These numbers, that will be stored in an array, represent salaries in the $30K – $60K range and are to be generated randomly. This is the definition of standard deviation, √ ∑ (𝑥𝑖 − 𝑥̅) 𝑛 2 𝑖=1 𝑛 − 1 where x̄denotes the average, and n is the total number of elements in the array. The program will present the user a menu with these choices:
+
+Populate Array
+Display Array
+Minimum
+Maximum
+Range
+Mode
+Mean
+Standard Deviation
+Exit and will let the user run them until “Exit” is entered.
+ */
 package com.company;
 import java.util.*;
 import java.lang.*;
@@ -14,6 +29,7 @@ public class Main {
          Populate(salary); //Populating the array in case the user doesn't do so before choosing the other options
         int option;//variable declaration for user input
         do{
+            //Displaying the Main Menu in a Dialog box
             String mainMenu = "Pick an option\n1.Populate Array\n2.Display Array\n3.Minimum\n" +
                     "4.Maximum\n5.Range\n6.Mode\n7.Mean\n8.Standard Deviation\n9.Exit";
             String option2 = JOptionPane.showInputDialog(mainMenu);
@@ -65,11 +81,11 @@ public class Main {
                     JOptionPane.showMessageDialog( null, "Invalid Input" );
 
             }
-        }while(option < 9 && option > 0);
-        System.out.println("Thanks for coming");
+        }while(option < 9 && option > 0);//Ending the while loop
+        JOptionPane.showMessageDialog( null, "Thanks for Coming" );
 
     }
-    private static void Populate(int salary[]) //method to populate the array
+    private static void Populate(int salary[])//method to populate the array
     {
         Random rand = new Random();
 
@@ -86,7 +102,7 @@ public class Main {
         for(int element : salary)
         {
             counter++;
-            if(counter > 5)
+            if(counter > 5)// used to keep 5 numbers per row
             {
                 result.append(element).append("\n");
                 counter = 0;
