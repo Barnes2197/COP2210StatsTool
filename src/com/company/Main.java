@@ -1,12 +1,12 @@
 package com.company;
 import java.util.*;
 import java.lang.*;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        
+
         String size2 = JOptionPane.showInputDialog("Enter the size of the array: "); //Letting the user choose the size of the array
         int size = Integer.parseInt(size2);//Accepts user input for array size
         int salary[] = new int[size]; //Declaring the array with user input for the size
@@ -30,28 +30,33 @@ public class Main {
                     break;
                 case 3:
                     String S3 =  "The minimum is: " + GetMin(salary);
-                    JOptionPane.showMessageDialog( null, S3 );
+                    JOptionPane.showMessageDialog( null, S3,"Minimum"
+                    ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 4:
                    String S = "The maximum is: " + GetMax(salary);
-                   JOptionPane.showMessageDialog( null, S );
+                   JOptionPane.showMessageDialog( null, S,"Maximum"
+                   ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 5:
                     String rangeS =  "The range is: " + Range(salary);
-                    JOptionPane.showMessageDialog( null, rangeS );
+                    JOptionPane.showMessageDialog( null, rangeS,"Range"
+                            ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 6:
                     String S6 = "The mode is: " + Mode(salary);
-                    JOptionPane.showMessageDialog( null, S6 );
+                    JOptionPane.showMessageDialog( null, S6, "Mode"
+                            ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 7:
                     String S7 =  "The mean is: " + Mean(salary);
-                    JOptionPane.showMessageDialog( null, S7 );
-
+                    JOptionPane.showMessageDialog( null, S7,"Mean"
+                            ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 8:
                     S =  "The Standard Deviation is: " + StandardDeviation(salary);
-                    JOptionPane.showMessageDialog( null, S );
+                JOptionPane.showMessageDialog( null, S, "Standard Deviation"
+                        ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 9:
                     break;
@@ -70,22 +75,30 @@ public class Main {
 
         for(int i = 0;i < salary.length;i++)
         {
-            salary[i] = (rand.nextInt(4) + 3) * 10000;
+            salary[i] = (rand.nextInt(30000)) + 30000;
         }
     }
     private static void DisplayArray(int salary[]) //Method to display the array to the user
     {
+        StringBuilder result = new StringBuilder();
         int counter = 0;
+
         for(int element : salary)
         {
-            System.out.print(element + " ");
             counter++;
-            if(counter == 3)
+            if(counter > 5)
             {
-                System.out.println();
+                result.append(element).append("\n");
                 counter = 0;
             }
+            else
+            {
+                result.append(element).append(" ");
+            }
+
         }
+        JOptionPane.showMessageDialog(null, result.toString(), "Displaying Array",
+                JOptionPane.INFORMATION_MESSAGE);
     }
     private static int GetMin(int salary[])//Method to get the minimum value of the array
     {
@@ -142,18 +155,6 @@ public class Main {
 
         return mode;
     }
-
-   /*public static double Median(int salary[])//Method to get the Median of the array *Unneeded apparently
-   //{
-   //    int median;
-   //
-   //    Arrays.sort(salary);
-   //
-   //
-   //
-   //    median = (salary[salary.length/2] + salary[salary.length/2 - 1])/2;
-   //    return median;
-   }*/
     private static int Mean(int salary[])//Method to get the mean of the array
     {
         int mean;
