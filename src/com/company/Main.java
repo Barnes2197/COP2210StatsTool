@@ -6,29 +6,18 @@ import javax.swing.JOptionPane;
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-
-
-        System.out.println("Enter the size of the array: "); //Letting the user choose the size of the array
-        int size = in.nextInt();//Accepts user input for array size
+        
+        String size2 = JOptionPane.showInputDialog("Enter the size of the array: "); //Letting the user choose the size of the array
+        int size = Integer.parseInt(size2);//Accepts user input for array size
         int salary[] = new int[size]; //Declaring the array with user input for the size
 
          Populate(salary); //Populating the array in case the user doesn't do so before choosing the other options
         int option;//variable declaration for user input
         do{
-            //Main menu for the user
-            System.out.println("Pick an option");
-            System.out.println("1.Populate Array");
-            System.out.println("2.Display Array");
-            System.out.println("3.Minimum");
-            System.out.println("4.Maximum");
-            System.out.println("5.Range");
-            System.out.println("6.Mode");
-            System.out.println("7.Mean");
-            System.out.println("8.Standard Deviation");
-            System.out.println("9.Exit");
-            option = in.nextInt();//Accepting user input
+            String mainMenu = "Pick an option\n1.Populate Array\n2.Display Array\n3.Minimum\n" +
+                    "4.Maximum\n5.Range\n6.Mode\n7.Mean\n8.Standard Deviation\n9.Exit";
+            String option2 = JOptionPane.showInputDialog(mainMenu);
+            option = Integer.parseInt(option2);
 
             //Switch cases used to accept the user input from the main menu
             switch(option)
