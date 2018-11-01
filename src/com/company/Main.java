@@ -26,7 +26,7 @@ public class Main {
         int size = Integer.parseInt(size2);//Accepts user input for array size
         int salary[] = new int[size]; //Declaring the array with user input for the size
 
-         Populate(salary); //Populating the array in case the user doesn't do so before choosing the other options
+         populate(salary); //Populating the array in case the user doesn't do so before choosing the other options
         int option;//variable declaration for user input
         do{
             //Displaying the Main Menu in a Dialog box
@@ -39,38 +39,38 @@ public class Main {
             switch(option)
             {
                 case 1:
-                    Populate(salary);
+                    populate(salary);
                     break;
                 case 2:
-                    DisplayArray(salary);
+                    displayArray(salary);
                     break;
                 case 3:
-                    String minimum =  "The minimum is: " + GetMin(salary);
+                    String minimum =  "The minimum is: " + getMin(salary);
                     JOptionPane.showMessageDialog( null, minimum,"Minimum"
                     ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 4:
-                   String maximum = "The maximum is: " + GetMax(salary);
+                   String maximum = "The maximum is: " + getMax(salary);
                    JOptionPane.showMessageDialog( null, maximum,"Maximum"
                    ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 5:
-                    String range =  "The range is: " + Range(salary);
+                    String range =  "The range is: " + range(salary);
                     JOptionPane.showMessageDialog( null, range,"Range"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 6:
-                    String mode = "The mode is: " + Mode(salary);
+                    String mode = "The mode is: " + mode(salary);
                     JOptionPane.showMessageDialog( null, mode, "Mode"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 7:
-                    String mean =  "The mean is: " + Mean(salary);
+                    String mean =  "The mean is: " + mean(salary);
                     JOptionPane.showMessageDialog( null, mean,"Mean"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 8:
-                    String standardDeviation =  "The Standard Deviation is: " + StandardDeviation(salary);
+                    String standardDeviation =  "The Standard Deviation is: " + standardDeviation(salary);
                 JOptionPane.showMessageDialog( null, standardDeviation, "Standard Deviation"
                         ,JOptionPane.INFORMATION_MESSAGE);
                     break;
@@ -84,7 +84,7 @@ public class Main {
         JOptionPane.showMessageDialog( null, "Thanks for Coming" );
 
     }
-    private static void Populate(int salary[])//method to populate the array
+    private static void populate(int salary[])//method to populate the array
     {
         Random rand = new Random();
 
@@ -93,7 +93,7 @@ public class Main {
             salary[i] = (rand.nextInt(30000)) + 30000;
         }
     }
-    private static void DisplayArray(int salary[]) //Method to display the array to the user
+    private static void displayArray(int salary[]) //Method to display the array to the user
     {
         StringBuilder result = new StringBuilder();
         int counter = 0;
@@ -115,7 +115,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, result.toString(), "Displaying Array",
                 JOptionPane.INFORMATION_MESSAGE);
     }
-    private static int GetMin(int salary[])//Method to get the minimum value of the array
+    private static int getMin(int salary[])//Method to get the minimum value of the array
     {
         int min = salary[0];
 
@@ -128,7 +128,7 @@ public class Main {
         }
         return min;
     }
-    private static int GetMax(int salary[])//Method to get the maximum value of the array
+    private static int getMax(int salary[])//Method to get the maximum value of the array
     {
         int max = salary[0];
 
@@ -141,13 +141,13 @@ public class Main {
         }
         return max;
     }
-    private static int Range(int salary[])//Method to get the range of the array
+    private static int range(int salary[])//Method to get the range of the array
     {
-        int min = GetMin(salary);
-        int max = GetMax(salary);
+        int min = getMin(salary);
+        int max = getMax(salary);
         return max - min;
     }
-    private static int Mode(int salary[]) //Method to get the mode of the array
+    private static int mode(int salary[]) //Method to get the mode of the array
     {
         int mode = salary[0];
         int maxCount = 0;
@@ -170,7 +170,7 @@ public class Main {
 
         return mode;
     }
-    private static int Mean(int salary[])//Method to get the mean of the array
+    private static int mean(int salary[])//Method to get the mean of the array
     {
         int mean;
         int total = 0;
@@ -183,9 +183,9 @@ public class Main {
 
         return mean;
     }
-    private static double StandardDeviation(int salary [])//Method to get the standard deviation of the array
+    private static double standardDeviation(int salary [])//Method to get the standard deviation of the array
     {
-        int mean = Mean(salary);//Calls the mean to be used in the equation
+        int mean = mean(salary);//Calls the mean to be used in the equation
 
         double standardDeviation;
         double total = 0;
