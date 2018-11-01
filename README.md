@@ -1,4 +1,4 @@
-# COP2210StatsTool
+#StatsTool
 Programming Project
 5 - Write a program that simulates a statistics tool, by letting the user determine the minimum, the
 maximum, the range (maximum – minimum), the mode (value that is repeated more often), the mean
