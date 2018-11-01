@@ -45,39 +45,38 @@ public class Main {
                     DisplayArray(salary);
                     break;
                 case 3:
-                    String S3 =  "The minimum is: " + GetMin(salary);
-                    JOptionPane.showMessageDialog( null, S3,"Minimum"
+                    String minimum =  "The minimum is: " + GetMin(salary);
+                    JOptionPane.showMessageDialog( null, minimum,"Minimum"
                     ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 4:
-                   String S = "The maximum is: " + GetMax(salary);
-                   JOptionPane.showMessageDialog( null, S,"Maximum"
+                   String maximum = "The maximum is: " + GetMax(salary);
+                   JOptionPane.showMessageDialog( null, maximum,"Maximum"
                    ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 5:
-                    String rangeS =  "The range is: " + Range(salary);
-                    JOptionPane.showMessageDialog( null, rangeS,"Range"
+                    String range =  "The range is: " + Range(salary);
+                    JOptionPane.showMessageDialog( null, range,"Range"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 6:
-                    String S6 = "The mode is: " + Mode(salary);
-                    JOptionPane.showMessageDialog( null, S6, "Mode"
+                    String mode = "The mode is: " + Mode(salary);
+                    JOptionPane.showMessageDialog( null, mode, "Mode"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 7:
-                    String S7 =  "The mean is: " + Mean(salary);
-                    JOptionPane.showMessageDialog( null, S7,"Mean"
+                    String mean =  "The mean is: " + Mean(salary);
+                    JOptionPane.showMessageDialog( null, mean,"Mean"
                             ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 8:
-                    S =  "The Standard Deviation is: " + StandardDeviation(salary);
-                JOptionPane.showMessageDialog( null, S, "Standard Deviation"
+                    String standardDeviation =  "The Standard Deviation is: " + StandardDeviation(salary);
+                JOptionPane.showMessageDialog( null, standardDeviation, "Standard Deviation"
                         ,JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case 9:
                     break;
                 default:
-                    System.out.println("Invalid Input");
                     JOptionPane.showMessageDialog( null, "Invalid Input" );
 
             }
